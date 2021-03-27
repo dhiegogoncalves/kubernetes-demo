@@ -1,0 +1,25 @@
+# Kind
+kind create cluster --config=k8s/kind.yaml
+kind get clusters
+kind delete clusters
+kubectl cluster-info --context cluster-name
+
+# Proxy
+kubectl proxy --port=8080
+
+# Pod
+kubectl get pods
+kubectl port-forward pod/goserver 8000:80
+
+# Service
+kubectl get pods
+kubectl port-forward svc/goserver-service 9000:80
+
+# Nodes
+kubectl get nodes
+
+kubectl exec -it goserver-868bf8b487-nms2w -- bash
+kubectl logs goserver-868bf8b487-nms2w
+
+kubectl top pod goserver-848b77948d-m5v6z
+kubectl get hpa
